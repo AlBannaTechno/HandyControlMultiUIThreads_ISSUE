@@ -8,6 +8,16 @@
         Title="SecondWindow" Height="450" Width="800">
     <StackPanel>
         <TextBlock>Second Window</TextBlock>
-        <Button>Ok S</Button>
+
+        <!-- 
+            you can not do this
+            Style="{StaticResource ButtonPrimary}"
+            because second window does not load the resource from App.xaml
+            and we can not create multiple App.xaml, because this is a one per appDomain
+            so you must use dynamic resources, to load it from memory, with shared read-only access privilege
+        -->
+        <Button
+           Style="{DynamicResource ButtonPrimary}"
+        >Ok S</Button>
     </StackPanel>
 </Window>

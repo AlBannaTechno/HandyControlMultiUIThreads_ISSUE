@@ -8,6 +8,8 @@
         Title="MainWindow" Height="450" Width="800">
     <StackPanel>
         <TextBlock >Main Window</TextBlock>
-        <Button>Ok </Button>
+        <Button
+            Style="{StaticResource ButtonInfo}"
+            >Ok </Button>
     </StackPanel>
 </Window>
