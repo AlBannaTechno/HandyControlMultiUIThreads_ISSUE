@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:WpfApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <StackPanel>
+        <TextBlock >Main Window</TextBlock>
+        <Button>Ok </Button>
+    </StackPanel>
 </Window>

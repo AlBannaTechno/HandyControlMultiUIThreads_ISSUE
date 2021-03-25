@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:WpfApp"
         mc:Ignorable="d"
         Title="SecondWindow" Height="450" Width="800">
-    <Grid>
+    <StackPanel>
         <TextBlock>Second Window</TextBlock>
-    </Grid>
+        <Button>Ok S</Button>
+    </StackPanel>
 </Window>
