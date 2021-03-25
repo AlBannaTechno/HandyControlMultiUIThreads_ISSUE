@@ -8,6 +8,14 @@
         Title="SecondWindow" Height="450" Width="800">
     <StackPanel>
         <TextBlock>Second Window</TextBlock>
-        <Button>Ok S</Button>
+        <!-- 
+            neither 
+            Style="{DynamicResource ButtonPrimary}"
+            nor
+            Style="{StaticResource ButtonPrimary}"
+            will works here.
+        -->
+        <Button
+            >Ok S</Button>
     </StackPanel>
 </Window>
