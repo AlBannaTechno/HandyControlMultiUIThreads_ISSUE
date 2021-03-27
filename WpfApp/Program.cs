@@ -19,6 +19,12 @@ namespace WpfApp
 
             var app = new App();
             app.InitializeComponent();
+            
+            for (int i = 0; i < 2; i++)
+            {
+                RunSplashWindow(i);
+            }
+            
             app.Run();
         }
         
@@ -26,6 +32,7 @@ namespace WpfApp
         {
             var thread = new Thread(() =>
             {
+                Thread.Sleep(3000);
                 var window = new SecondWindow
                 {
                     Title = $"SecondWindow :  {index.ToString().PadLeft(2, ' ')}",

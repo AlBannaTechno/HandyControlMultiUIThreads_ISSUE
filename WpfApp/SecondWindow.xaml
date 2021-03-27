@@ -4,20 +4,69 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
         mc:Ignorable="d"
-        Title="SecondWindow" Height="450" Width="800">
-    <StackPanel>
-        <TextBlock>Second Window</TextBlock>
+        Title="SecondWindow" Height="250" Width="600">
+    <Border>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".5*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height=".75*" />
+            </Grid.RowDefinitions>
+            <TextBlock
+                Grid.Row="0"
+                x:Name="DatabaseName"
+                Style="{DynamicResource TextBlockDefaultInfo}"
+                FontSize="18" />
+            <TextBox
+                Grid.Row="1"
+                x:Name="Username"
+                FontSize="18"
+                Margin="0,5,0,2" />
+            <hc:PasswordBox
+                Grid.Row="2"
+                x:Name="Password"
+                Margin="0,2,0,0"
+                ShowClearButton="True"
+                ShowEyeButton="True"
+                hc:InfoElement.Placeholder="Password"
+                FontSize="18" />
+            <Grid
+                Grid.Row="3"
+                Margin="0,5,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Button
+                    Grid.Column="0"
+                    x:Name="LoginButton"
+                    FontSize="18"
+                    Height="40"
+                    Margin="0,0,10,0"
+                    HorizontalAlignment="Stretch"
+                    Style="{StaticResource ButtonWarning}"
+                    Content="Login" />
+                <Button
+                    Grid.Column="1"
+                    x:Name="ChangeDatabaseButton"
+                    FontSize="18"
+                    Height="40"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Stretch"
+                    Content="Change" />
+            </Grid>
 
-        <!-- 
-            you can not do this
-            Style="{StaticResource ButtonPrimary}"
-            because second window does not load the resource from App.xaml
-            and we can not create multiple App.xaml, because this is a one per appDomain
-            so you must use dynamic resources, to load it from memory, with shared read-only access privilege
-        -->
-        <Button
-           Style="{DynamicResource ButtonPrimary}"
-        >Ok S</Button>
-    </StackPanel>
+            <TextBlock
+                Grid.Row="4"
+                Height="30"
+                Style="{StaticResource TextBlockDefaultWarning}"
+                FontSize="18"
+                FontWeight="SemiBold"
+                x:Name="StateText" />
+        </Grid>
+    </Border>
 </Window>
