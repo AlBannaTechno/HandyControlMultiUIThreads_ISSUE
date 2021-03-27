@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using HandyControl.Themes;
 
 namespace WpfApp
 {
@@ -19,16 +20,26 @@ namespace WpfApp
 
             var app = new App();
             app.InitializeComponent();
+
+            for (int i = 0; i < 2; i++)
+            {
+                RunSplashWindow(i);
+            }
+
             app.Run();
         }
-        
+
         private static void RunSplashWindow(int index)
         {
             var thread = new Thread(() =>
             {
+                // suppose any additional async operations before init the window
+                Thread.Sleep(500);
+
                 var window = new SecondWindow
                 {
                     Title = $"SecondWindow :  {index.ToString().PadLeft(2, ' ')}",
+                    Resources = new Theme()
                 };
                 window.Show();
                 System.Windows.Threading.Dispatcher.Run();
