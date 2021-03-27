@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using HandyControl.Themes;
 
 namespace WpfApp
 {
@@ -20,7 +21,7 @@ namespace WpfApp
     public partial class SecondWindow : Window
     {
         public SecondWindow()
-        {
+        { 
             InitializeComponent();
         }
     }
